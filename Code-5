@@ -1,0 +1,52 @@
+import prime
+print("prime numbers")
+for i in range(1,100):
+    if prime.isPrime(i):
+        print(i,end=',')
+print("\nparlindrome prime numbers")  
+for i in range(1,100):
+    if prime.isParlindromePrime(i):
+          print(i,end=',')
+print("\nEmirp numbers")      
+for i in range(1,100):
+    if prime.isEmirp(i):
+        print(i,end=',')
+print("\nMersenne prime number")
+for i in range(1,32):
+    if(mersenneprime(i)!=False):
+        print(prime.mersenneprime(i))
+print("\nTwin primes")        
+prime.printTwinprime(1000)
+
+            (Or)
+
+2.def isPrime(num):
+    count =0
+    for i in range(1,num+1):
+         if num%i==0:
+              count += 1
+    return count==2
+def isParlindromePrime(number):
+    if(isPrime(number)==True):
+           temp=number
+           x=str(number)
+           y=x[: :-1]
+           return temp == int(y)
+    return False     
+def isEmirp(number):
+    temp=number
+    x=str(number)  
+    y=int(x[: : -1])
+    return isPrime(temp) and isPrime(y)
+def mersenneprime(p):
+    if isPrime(p):
+        return (2**p)-1
+    return False
+def printTwinPrime(r):
+     for i in range(2,r+1) :
+               for j in range(2,r+1):
+                                   if(isPrime(i) and isPrime(j) and j-1==2):
+                                       print('(',i,',',j,')',"Are twin primes")
+
+
+
